@@ -15,6 +15,8 @@
 		5154F2C62B6841AD00C90BB1 /* KeleaNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2C52B6841AD00C90BB1 /* KeleaNewsUITests.swift */; };
 		5154F2C82B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2C72B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift */; };
 		5154F2DD2B69339500C90BB1 /* NetworkCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 5154F2DC2B69339500C90BB1 /* NetworkCombine */; };
+		5154F2DF2B69374100C90BB1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2DE2B69374100C90BB1 /* HomeViewModel.swift */; };
+		5154F2E22B6939A500C90BB1 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5154F2E12B6939A500C90BB1 /* DesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		5154F2C12B6841AD00C90BB1 /* KeleaNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeleaNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5154F2C52B6841AD00C90BB1 /* KeleaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsUITests.swift; sourceTree = "<group>"; };
 		5154F2C72B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5154F2DE2B69374100C90BB1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5154F2DD2B69339500C90BB1 /* NetworkCombine in Frameworks */,
+				5154F2E22B6939A500C90BB1 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				5154F2AC2B6841AA00C90BB1 /* HomeView.swift */,
+				5154F2DE2B69374100C90BB1 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			name = KeleaNews;
 			packageProductDependencies = (
 				5154F2DC2B69339500C90BB1 /* NetworkCombine */,
+				5154F2E12B6939A500C90BB1 /* DesignSystem */,
 			);
 			productName = KeleaNews;
 			productReference = 5154F2A72B6841AA00C90BB1 /* KeleaNews.app */;
@@ -278,6 +284,7 @@
 			mainGroup = 5154F29E2B6841AA00C90BB1;
 			packageReferences = (
 				5154F2DB2B69339500C90BB1 /* XCLocalSwiftPackageReference "../Packages/NetworkCombine" */,
+				5154F2E02B6939A500C90BB1 /* XCLocalSwiftPackageReference "../Packages/DesignSystem" */,
 			);
 			productRefGroup = 5154F2A82B6841AA00C90BB1 /* Products */;
 			projectDirPath = "";
@@ -322,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5154F2AD2B6841AA00C90BB1 /* HomeView.swift in Sources */,
+				5154F2DF2B69374100C90BB1 /* HomeViewModel.swift in Sources */,
 				5154F2AB2B6841AA00C90BB1 /* KeleaNewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,12 +674,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../Packages/NetworkCombine;
 		};
+		5154F2E02B6939A500C90BB1 /* XCLocalSwiftPackageReference "../Packages/DesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/DesignSystem;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		5154F2DC2B69339500C90BB1 /* NetworkCombine */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NetworkCombine;
+		};
+		5154F2E12B6939A500C90BB1 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
