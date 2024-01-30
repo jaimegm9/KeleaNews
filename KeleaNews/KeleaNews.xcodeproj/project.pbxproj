@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5154F2AB2B6841AA00C90BB1 /* KeleaNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */; };
-		5154F2AD2B6841AA00C90BB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2AC2B6841AA00C90BB1 /* ContentView.swift */; };
+		5154F2AD2B6841AA00C90BB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2AC2B6841AA00C90BB1 /* HomeView.swift */; };
 		5154F2AF2B6841AD00C90BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */; };
 		5154F2B22B6841AD00C90BB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5154F2B12B6841AD00C90BB1 /* Preview Assets.xcassets */; };
 		5154F2BC2B6841AD00C90BB1 /* KeleaNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2BB2B6841AD00C90BB1 /* KeleaNewsTests.swift */; };
 		5154F2C62B6841AD00C90BB1 /* KeleaNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2C52B6841AD00C90BB1 /* KeleaNewsUITests.swift */; };
 		5154F2C82B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2C72B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift */; };
+		5154F2DD2B69339500C90BB1 /* NetworkCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 5154F2DC2B69339500C90BB1 /* NetworkCombine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		5154F2A72B6841AA00C90BB1 /* KeleaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeleaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsApp.swift; sourceTree = "<group>"; };
-		5154F2AC2B6841AA00C90BB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5154F2AC2B6841AA00C90BB1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5154F2B12B6841AD00C90BB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5154F2B72B6841AD00C90BB1 /* KeleaNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeleaNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154F2DD2B69339500C90BB1 /* NetworkCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +96,10 @@
 		5154F2A92B6841AA00C90BB1 /* KeleaNews */ = {
 			isa = PBXGroup;
 			children = (
-				5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */,
-				5154F2AC2B6841AA00C90BB1 /* ContentView.swift */,
-				5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */,
+				5154F2D42B69068500C90BB1 /* App */,
+				5154F2D62B6906B200C90BB1 /* Service */,
+				5154F2D72B6906DB00C90BB1 /* Model */,
+				5154F2D82B6906F300C90BB1 /* Scenes */,
 				5154F2B02B6841AD00C90BB1 /* Preview Content */,
 			);
 			path = KeleaNews;
@@ -127,6 +130,61 @@
 			path = KeleaNewsUITests;
 			sourceTree = "<group>";
 		};
+		5154F2D42B69068500C90BB1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */,
+				5154F2D52B69069700C90BB1 /* Supporting Files */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5154F2D52B69069700C90BB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5154F2D62B6906B200C90BB1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5154F2D72B6906DB00C90BB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5154F2D82B6906F300C90BB1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5154F2D92B690BAF00C90BB1 /* Home */,
+				5154F2DA2B690BB700C90BB1 /* Detail */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5154F2D92B690BAF00C90BB1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5154F2AC2B6841AA00C90BB1 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5154F2DA2B690BB700C90BB1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +201,9 @@
 			dependencies = (
 			);
 			name = KeleaNews;
+			packageProductDependencies = (
+				5154F2DC2B69339500C90BB1 /* NetworkCombine */,
+			);
 			productName = KeleaNews;
 			productReference = 5154F2A72B6841AA00C90BB1 /* KeleaNews.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 5154F29E2B6841AA00C90BB1;
+			packageReferences = (
+				5154F2DB2B69339500C90BB1 /* XCLocalSwiftPackageReference "../Packages/NetworkCombine" */,
+			);
 			productRefGroup = 5154F2A82B6841AA00C90BB1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5154F2AD2B6841AA00C90BB1 /* ContentView.swift in Sources */,
+				5154F2AD2B6841AA00C90BB1 /* HomeView.swift in Sources */,
 				5154F2AB2B6841AA00C90BB1 /* KeleaNewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -428,8 +492,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +501,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JaimeGM.KeleaNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,8 +525,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +534,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JaimeGM.KeleaNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,6 +660,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5154F2DB2B69339500C90BB1 /* XCLocalSwiftPackageReference "../Packages/NetworkCombine" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Packages/NetworkCombine;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5154F2DC2B69339500C90BB1 /* NetworkCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkCombine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5154F29F2B6841AA00C90BB1 /* Project object */;
 }
