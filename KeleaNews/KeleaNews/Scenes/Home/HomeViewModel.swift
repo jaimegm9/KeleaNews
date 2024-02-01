@@ -14,7 +14,7 @@ enum HomeState: Equatable {
     case loaded([Article])
     case error(String)
     
-    static func ==(lhs: HomeState, rhs: HomeState) -> Bool {
+    static func == (lhs: Self, rhs: Self) -> Bool {
         switch (lhs, rhs) {
         case (.loading, .loading):
             return true
@@ -70,9 +70,9 @@ final class HomeViewModel: ObservableObject {
                 guard let self else { return }
                 if case .failure(let error) = completion {
                     if case .unexpectedStatusCode(code: let code) = error {
-                        self.state = code == 401 ? .error("error token") : .error("error general")
+                        self.state = code == 401 ? .error("Token error") : .error("Unexpected error")
                     } else {
-                        self.state = .error("error general")
+                        self.state = .error("Unexpected error")
                     }
                 }
             } receiveValue: { [weak self] response in
@@ -109,8 +109,8 @@ final class HomeViewModel: ObservableObject {
     
     private func getCurrentCountry() -> String {
         let country = Locale.current.regionCode ?? "us"
-        
-        //The news api doesn't have Spain ('es') as valid option for a country, so for testing purposes, if that's the case, we change it to 'us'
+        // The news api doesn't have Spain ('es') as valid option for a country
+        // so for testing purposes, if that's the case, we change it to 'us'
         return (country == "ES") ? "us" : country
     }
 }

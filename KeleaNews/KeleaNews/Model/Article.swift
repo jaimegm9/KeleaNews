@@ -23,6 +23,17 @@ struct Article: Decodable, Equatable, Identifiable {
     let publishedAt: String?
     let content: String?
     
+    enum CodingKeys: String, CodingKey {
+        case source
+        case author
+        case title
+        case description
+        case url
+        case urlToImage
+        case publishedAt
+        case content
+    }
+    
     struct Source: Decodable, Equatable {
         let id: String?
         let name: String?

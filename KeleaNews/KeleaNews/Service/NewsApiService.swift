@@ -33,8 +33,8 @@ enum NewsApiService: NetworkRequest {
         }
     }
     
-    var parameters: [String : Any]? {
-        var params: [String : Any] = [:]
+    var parameters: [String: Any]? {
+        var params: [String: Any] = [:]
         params["pageSize"] = "10"
         switch self {
         case .getRecentNews(let topic, let page):
@@ -49,8 +49,8 @@ enum NewsApiService: NetworkRequest {
         return params
     }
     
-    var headers: [String : String]? {
-        var headers: [String : String] = [:]
+    var headers: [String: String]? {
+        var headers: [String: String] = [:]
         headers[HTTPHeaderField.apiKey.rawValue] = NewsApiConfig.apiKey
         return headers
     }
@@ -63,4 +63,3 @@ enum NewsApiService: NetworkRequest {
         50
     }
 }
-

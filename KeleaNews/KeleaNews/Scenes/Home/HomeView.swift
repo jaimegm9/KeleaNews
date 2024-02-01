@@ -35,8 +35,6 @@ struct HomeView: View {
                         }
                     }
                 }
-                
-                
             }
             searchButton()
         }
@@ -99,6 +97,7 @@ extension HomeView {
             .onNavigation {
                 vm.openDetail(article)
             }
+            .accessibility(identifier: Accessibility.Home.cell)
             if vm.isLastCell(article: article) {
                 LoadingCellView()
             }
@@ -130,6 +129,7 @@ extension HomeView {
                         .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
                 }
                 .padding([.bottom, .trailing], 20)
+                .accessibility(identifier: Accessibility.Home.searchButton)
             }
         }
     }
@@ -151,14 +151,13 @@ extension HomeView {
     @ViewBuilder
     func loadingView() -> some View {
         VStack {
-            ForEach(0 ..< 2) { item in
+            ForEach(0 ..< 2) { _ in
                 LoadingCellView()
             }
             Spacer()
         }
     }
 }
-
 
 #Preview {
     HomeView(vm: HomeViewModel(coordinator: Coordinator(),

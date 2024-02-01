@@ -9,7 +9,6 @@ import Foundation
 import NetworkCombine
 import Combine
 
-
 protocol GetTopHeadlinesWorkerProtocol {
     func getTopHeadlinesPublisher(country: String, page: Int) -> AnyPublisher<Articles, NetworkError>
 }

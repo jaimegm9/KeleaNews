@@ -19,7 +19,7 @@ final class Coordinator: CoordinatorProtocol, ObservableObject {
     
     init() {
         self.homeViewModel = HomeViewModel(coordinator: self,
-                                           getTopicNewsWorker: GetTopicNewsWorker(), 
+                                           getTopicNewsWorker: GetTopicNewsWorker(),
                                            getTopHeadlinesNewsWorker: GetTopHeadlinesWorker())
     }
     
@@ -33,5 +33,5 @@ final class Coordinator: CoordinatorProtocol, ObservableObject {
 }
 
 struct IdentifiableURL: Identifiable {
-    public var id: URL
+    var id: URL
 }

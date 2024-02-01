@@ -9,7 +9,6 @@ import Foundation
 import NetworkCombine
 import Combine
 
-
 protocol GetTopicNewsWorkerProtocol {
     func getRecentNewsPublisher(topic: String, page: Int) -> AnyPublisher<Articles, NetworkError>
 }

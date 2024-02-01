@@ -23,6 +23,7 @@ struct DetailView: View {
                 VStack(spacing: 0) {
                     if let image = vm.article.urlToImage {
                         ImageCombine(placeholder: Image("placeholder"), url: URL(string: image))
+                            .accessibility(identifier: Accessibility.Detail.image)
                     }
                     VStack {
                         Text(vm.article.title ?? "")
@@ -37,13 +38,14 @@ struct DetailView: View {
                                 .padding(.top, 3)
                         }
                     }
+                    .accessibility(identifier: Accessibility.Detail.title)
                     .background(Color.keleaDarkBlue)
                     
                     Text(vm.article.content ?? "")
                         .foregroundStyle(Color.keleaDarkBlue)
                         .background(.white)
                         .padding([.leading, .trailing, .top], ViewTraits.padding)
-                    
+                        .accessibility(identifier: Accessibility.Detail.content)
                 }
             }
             .edgesIgnoringSafeArea(.top)
@@ -74,6 +76,7 @@ extension DetailView {
                         .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
                 }
                 .padding([.top, .leading], ViewTraits.padding)
+                .accessibility(identifier: Accessibility.Detail.closeButton)
                 Spacer()
             }
             Spacer()
@@ -98,6 +101,7 @@ extension DetailView {
                 .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
             }
             .padding(.bottom, ViewTraits.padding)
+            .accessibility(identifier: Accessibility.Detail.safariButton)
         }
     }
 }
