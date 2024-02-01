@@ -11,7 +11,7 @@ import SwiftUI
 struct KeleaNewsApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            CoordinatorView(coordinator: Coordinator())
         }
     }
 }

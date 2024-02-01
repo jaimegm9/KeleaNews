@@ -1,0 +1,35 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Home title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelea"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kelea"
+          }
+        }
+      }
+    },
+    "News" : {
+
+    },
+    "No results" : {
+
+    },
+    "Ok" : {
+
+    },
+    "See full content in safari" : {
+
+    }
+  },
+  "version" : "1.0"
+}

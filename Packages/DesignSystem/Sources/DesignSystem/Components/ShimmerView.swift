@@ -11,7 +11,7 @@ public struct ShimmerView: View {
     
     private struct Constants {
         static let duration: Double = 0.7
-        static let minOpacity: Double = 0.3
+        static let minOpacity: Double = 0.15
         static let maxOpacity: Double = 1.0
         static let cornerRadius: CGFloat = 2.0
     }

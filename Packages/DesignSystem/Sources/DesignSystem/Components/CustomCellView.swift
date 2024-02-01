@@ -13,7 +13,9 @@ public struct CustomCellView: View {
         static let imageSize: CGFloat = 57
         static let cornerRadius: CGFloat = 10
         static let opacity: Double = 0.7
-        static let margin: Double = 15
+        static let margin: Double = 16
+        static let marginBottom: Double = 20
+        static let topMarginCaption: Double = 3
     }
     
     let imageUrl: String?
@@ -29,7 +31,7 @@ public struct CustomCellView: View {
     public var body: some View {
         ZStack(alignment: .leading) {
             if let imageUrl {
-                ImageCombine(placeholder: Image(systemName: "person"), url: URL(string: imageUrl))
+                ImageCombine(placeholder: Image("placeholder"), url: URL(string: imageUrl))
             }
             
             VStack {
@@ -40,20 +42,24 @@ public struct CustomCellView: View {
                     Text(title)
                         .font(.body)
                         .foregroundStyle(.white)
+                        .padding([.leading, .trailing, .top], ViewTraits.margin)
                     HStack {
                         Spacer()
                         Text(subtitle)
                             .font(.caption)
                             .foregroundStyle(.white)
+                            .padding([.bottom, .trailing], ViewTraits.margin)
+                            .padding(.top, ViewTraits.topMarginCaption)
                     }
-                    .padding([.top, .bottom, .trailing], ViewTraits.margin)
                 }
-                .padding([.leading, .top], ViewTraits.margin)
-                .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                .background(Color.keleaDarkBlue)
+                .background(Color.keleaDarkBlue.opacity((imageUrl != nil) ? 0.75 : 1))
             }
         }
         .cornerRadius(ViewTraits.cornerRadius)
+        .padding([.leading, .trailing], ViewTraits.margin)
+        .padding(.bottom, ViewTraits.marginBottom)
+        .shadow(color: .black.opacity(0.8), radius: 5, x: 5, y: 5)
+        
     }
 }
 

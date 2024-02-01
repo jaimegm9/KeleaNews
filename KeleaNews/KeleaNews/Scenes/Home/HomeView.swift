@@ -6,19 +6,162 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 struct HomeView: View {
+    @StateObject var vm: HomeViewModel
+    @FocusState var isFocused: Bool
+    @State private var scrollToTop: Bool = false
+    private let searchBarId = "id"
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            ScrollView {
+                ScrollViewReader { proxy in
+                    searchView()
+                    LazyVStack {
+                        switch vm.state {
+                        case .loading:
+                            loadingView()
+                        case .loaded(let articles):
+                            list(articles)
+                        case .error(let error):
+                            errorView(error)
+                        }
+                    }
+                    .onChange(of: scrollToTop) { _ in
+                        withAnimation {
+                            proxy.scrollTo(searchBarId)
+                        }
+                    }
+                }
+                
+                
+            }
+            searchButton()
         }
-        .padding()
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                header()
+            }
+        }
+        .onAppear {
+            if vm.state == .loading {
+                vm.loadingAndGetNews()
+            }
+        }
+        .alert("No results",
+               isPresented: $vm.noResults) {
+            Button {
+                vm.searchText = ""
+            } label: {
+                Text("Ok")
+            }
+        }
     }
 }
 
+extension HomeView {
+    
+    @ViewBuilder
+    func header() -> some View {
+        HStack {
+            Image("keleaLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 30)
+            Spacer()
+            Text("News")
+                .foregroundStyle(Color.keleaOrange)
+                .font(.title2)
+        }
+    }
+    
+    @ViewBuilder
+    func searchView() -> some View {
+        SearchBarView(searchText: $vm.searchText,
+                      isFocused: _isFocused,
+                      search: { vm.loadingAndGetNews() })
+        .padding([.top, .bottom], 15)
+        .id(searchBarId)
+    }
+    
+    @ViewBuilder
+    func list(_ articles: [Article]) -> some View {
+        ForEach(articles) { article in
+            CustomCellView(imageUrl: article.urlToImage,
+                           title: article.title ?? "",
+                           subtitle: article.author ?? "")
+            .onAppear {
+                vm.loadMoreArticlesIfNeeded(article: article)
+            }
+            .onNavigation {
+                vm.openDetail(article)
+            }
+            if vm.isLastCell(article: article) {
+                LoadingCellView()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func searchButton() -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                Button(action: {
+                    if isFocused {
+                        vm.loadingAndGetNews()
+                        isFocused.toggle()
+                    } else {
+                        isFocused.toggle()
+                        scrollToTop.toggle()
+                    }
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .foregroundColor(.white)
+                        .frame(width: 30, height: 30)
+                        .padding()
+                        .background(Color.keleaOrange)
+                        .clipShape(.circle)
+                        .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
+                }
+                .padding([.bottom, .trailing], 20)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func errorView(_ error: String) -> some View {
+        VStack(alignment: .center) {
+            Image(systemName: "exclamationmark.triangle")
+                .font(.system(size: 40))
+                .padding(.bottom, 20)
+            Text(error)
+                .font(.title2)
+                .multilineTextAlignment(.center)
+                .padding(.bottom, 60)
+        }
+        .padding()
+    }
+    
+    @ViewBuilder
+    func loadingView() -> some View {
+        VStack {
+            ForEach(0 ..< 2) { item in
+                LoadingCellView()
+            }
+            Spacer()
+        }
+    }
+}
+
+
 #Preview {
-    HomeView()
+    HomeView(vm: HomeViewModel(coordinator: Coordinator(),
+                               getTopicNewsWorker: GetTopicNewsWorker(), 
+                               getTopHeadlinesNewsWorker: GetTopHeadlinesWorker()))
 }

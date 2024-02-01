@@ -65,6 +65,7 @@ public enum HTTPMethod: String {
 }
 
 public enum HTTPHeaderField: String {
+    case apiKey = "X-Api-Key"
     case authorization = "Authorization"
     case accept = "Accept"
     case contentType = "Content-Type"

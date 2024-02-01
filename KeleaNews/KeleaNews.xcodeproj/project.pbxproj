@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5108B56A2B6BC1F800DF81A2 /* GetTopHeadlinesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5108B5692B6BC1F800DF81A2 /* GetTopHeadlinesWorker.swift */; };
 		5154F2AB2B6841AA00C90BB1 /* KeleaNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */; };
 		5154F2AD2B6841AA00C90BB1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2AC2B6841AA00C90BB1 /* HomeView.swift */; };
 		5154F2AF2B6841AD00C90BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */; };
@@ -17,6 +18,16 @@
 		5154F2DD2B69339500C90BB1 /* NetworkCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 5154F2DC2B69339500C90BB1 /* NetworkCombine */; };
 		5154F2DF2B69374100C90BB1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2DE2B69374100C90BB1 /* HomeViewModel.swift */; };
 		5154F2E22B6939A500C90BB1 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 5154F2E12B6939A500C90BB1 /* DesignSystem */; };
+		5154F2E42B69526300C90BB1 /* NewsApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2E32B69526300C90BB1 /* NewsApiConfig.swift */; };
+		5154F2E62B69527500C90BB1 /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2E52B69527500C90BB1 /* NewsApiService.swift */; };
+		5154F2E82B69544600C90BB1 /* GetTopicNewsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2E72B69544600C90BB1 /* GetTopicNewsWorker.swift */; };
+		5154F2EA2B6954DB00C90BB1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2E92B6954DB00C90BB1 /* Article.swift */; };
+		5154F2EC2B695B8900C90BB1 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5154F2EB2B695B8900C90BB1 /* Localizable.xcstrings */; };
+		5154F2EE2B6A64C200C90BB1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2ED2B6A64C200C90BB1 /* Coordinator.swift */; };
+		5154F2F02B6A682800C90BB1 /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2EF2B6A682800C90BB1 /* CoordinatorView.swift */; };
+		5154F2F32B6A6BDD00C90BB1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2F22B6A6BDD00C90BB1 /* Extensions.swift */; };
+		5154F2F52B6A6CD300C90BB1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2F42B6A6CD300C90BB1 /* DetailView.swift */; };
+		5154F2F72B6A6CE800C90BB1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5154F2F62B6A6CE800C90BB1 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5108B5692B6BC1F800DF81A2 /* GetTopHeadlinesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopHeadlinesWorker.swift; sourceTree = "<group>"; };
 		5154F2A72B6841AA00C90BB1 /* KeleaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeleaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5154F2AA2B6841AA00C90BB1 /* KeleaNewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsApp.swift; sourceTree = "<group>"; };
 		5154F2AC2B6841AA00C90BB1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -48,6 +60,16 @@
 		5154F2C52B6841AD00C90BB1 /* KeleaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsUITests.swift; sourceTree = "<group>"; };
 		5154F2C72B6841AD00C90BB1 /* KeleaNewsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeleaNewsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5154F2DE2B69374100C90BB1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5154F2E32B69526300C90BB1 /* NewsApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiConfig.swift; sourceTree = "<group>"; };
+		5154F2E52B69527500C90BB1 /* NewsApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
+		5154F2E72B69544600C90BB1 /* GetTopicNewsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopicNewsWorker.swift; sourceTree = "<group>"; };
+		5154F2E92B6954DB00C90BB1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		5154F2EB2B695B8900C90BB1 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5154F2ED2B6A64C200C90BB1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5154F2EF2B6A682800C90BB1 /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
+		5154F2F22B6A6BDD00C90BB1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5154F2F42B6A6CD300C90BB1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5154F2F62B6A6CE800C90BB1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +126,7 @@
 				5154F2D62B6906B200C90BB1 /* Service */,
 				5154F2D72B6906DB00C90BB1 /* Model */,
 				5154F2D82B6906F300C90BB1 /* Scenes */,
+				5154F2F12B6A6BB900C90BB1 /* Common */,
 				5154F2B02B6841AD00C90BB1 /* Preview Content */,
 			);
 			path = KeleaNews;
@@ -147,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5154F2AE2B6841AD00C90BB1 /* Assets.xcassets */,
+				5154F2EB2B695B8900C90BB1 /* Localizable.xcstrings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +178,10 @@
 		5154F2D62B6906B200C90BB1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5154F2E32B69526300C90BB1 /* NewsApiConfig.swift */,
+				5154F2E52B69527500C90BB1 /* NewsApiService.swift */,
+				5154F2E72B69544600C90BB1 /* GetTopicNewsWorker.swift */,
+				5108B5692B6BC1F800DF81A2 /* GetTopHeadlinesWorker.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -161,6 +189,7 @@
 		5154F2D72B6906DB00C90BB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5154F2E92B6954DB00C90BB1 /* Article.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +197,8 @@
 		5154F2D82B6906F300C90BB1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5154F2ED2B6A64C200C90BB1 /* Coordinator.swift */,
+				5154F2EF2B6A682800C90BB1 /* CoordinatorView.swift */,
 				5154F2D92B690BAF00C90BB1 /* Home */,
 				5154F2DA2B690BB700C90BB1 /* Detail */,
 			);
@@ -186,8 +217,18 @@
 		5154F2DA2B690BB700C90BB1 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				5154F2F42B6A6CD300C90BB1 /* DetailView.swift */,
+				5154F2F62B6A6CE800C90BB1 /* DetailViewModel.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		5154F2F12B6A6BB900C90BB1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5154F2F22B6A6BDD00C90BB1 /* Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +321,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 5154F29E2B6841AA00C90BB1;
 			packageReferences = (
@@ -304,6 +346,7 @@
 			files = (
 				5154F2B22B6841AD00C90BB1 /* Preview Assets.xcassets in Resources */,
 				5154F2AF2B6841AD00C90BB1 /* Assets.xcassets in Resources */,
+				5154F2EC2B695B8900C90BB1 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,9 +371,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5154F2EE2B6A64C200C90BB1 /* Coordinator.swift in Sources */,
+				5154F2F02B6A682800C90BB1 /* CoordinatorView.swift in Sources */,
+				5154F2EA2B6954DB00C90BB1 /* Article.swift in Sources */,
 				5154F2AD2B6841AA00C90BB1 /* HomeView.swift in Sources */,
+				5154F2E62B69527500C90BB1 /* NewsApiService.swift in Sources */,
+				5154F2F52B6A6CD300C90BB1 /* DetailView.swift in Sources */,
+				5154F2F32B6A6BDD00C90BB1 /* Extensions.swift in Sources */,
+				5154F2F72B6A6CE800C90BB1 /* DetailViewModel.swift in Sources */,
 				5154F2DF2B69374100C90BB1 /* HomeViewModel.swift in Sources */,
 				5154F2AB2B6841AA00C90BB1 /* KeleaNewsApp.swift in Sources */,
+				5154F2E82B69544600C90BB1 /* GetTopicNewsWorker.swift in Sources */,
+				5108B56A2B6BC1F800DF81A2 /* GetTopHeadlinesWorker.swift in Sources */,
+				5154F2E42B69526300C90BB1 /* NewsApiConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +555,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,6 +589,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

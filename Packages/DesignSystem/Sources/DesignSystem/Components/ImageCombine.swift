@@ -33,7 +33,9 @@ public struct ImageCombine: View {
                     .resizable()
                     .scaledToFill()
             } else {
-                placeholder
+                placeholder?
+                    .resizable()
+                    .scaledToFill()
             }
         }
         .onAppear(perform: getImage)
