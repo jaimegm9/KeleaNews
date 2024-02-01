@@ -49,12 +49,11 @@ struct HomeView: View {
                 vm.loadingAndGetNews()
             }
         }
-        .alert("No results",
-               isPresented: $vm.noResults) {
+        .alert("NoNews", isPresented: $vm.noNews) {
             Button {
                 vm.searchText = ""
             } label: {
-                Text("Ok")
+                Text("ok")
             }
         }
     }
@@ -98,7 +97,7 @@ extension HomeView {
                 vm.openDetail(article)
             }
             .accessibility(identifier: Accessibility.Home.cell)
-            if vm.isLastCell(article: article) {
+            if vm.isLastCell(article: article) && !vm.noMoreNews {
                 LoadingCellView()
             }
         }
@@ -126,7 +125,7 @@ extension HomeView {
                         .padding()
                         .background(Color.keleaOrange)
                         .clipShape(.circle)
-                        .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
+                        .modifier(Shadow())
                 }
                 .padding([.bottom, .trailing], 20)
                 .accessibility(identifier: Accessibility.Home.searchButton)

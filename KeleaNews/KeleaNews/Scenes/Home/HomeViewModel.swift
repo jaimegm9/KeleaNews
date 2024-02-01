@@ -32,13 +32,15 @@ final class HomeViewModel: ObservableObject {
     private unowned let coordinator: CoordinatorProtocol
     
     @Published var state: HomeState = .loading
-    @Published var noResults: Bool = false
+    @Published var noNews: Bool = false
+    @Published var noMoreNews: Bool = false
     var searchText = ""
     
     private let getTopicNewsWorker: GetTopicNewsWorkerProtocol
     private let getTopHeadlinesNewsWorker: GetTopHeadlinesWorkerProtocol
     private var subscriptions = Set<AnyCancellable>()
     private var page = 1
+    private var maxNumerPages = 2.0
     
     init(coordinator: CoordinatorProtocol,
          getTopicNewsWorker: GetTopicNewsWorkerProtocol,
@@ -55,7 +57,6 @@ final class HomeViewModel: ObservableObject {
     }
     
     func getArticles() {
-        
         if searchText.isEmpty {
             getNews(publisher: getTopHeadlinesNewsWorker.getTopHeadlinesPublisher(country: getCurrentCountry(), page: page))
         } else {
@@ -70,14 +71,16 @@ final class HomeViewModel: ObservableObject {
                 guard let self else { return }
                 if case .failure(let error) = completion {
                     if case .unexpectedStatusCode(code: let code) = error {
-                        self.state = code == 401 ? .error("Token error") : .error("Unexpected error")
+                        self.state = code == 401 ? .error(String(localized: "tokenError")) : 
+                            .error(String(localized: "unexpectedError"))
                     } else {
-                        self.state = .error("Unexpected error")
+                        self.state = .error(String(localized: "unexpectedError"))
                     }
                 }
             } receiveValue: { [weak self] response in
                 guard let self else { return }
-                self.noResults = response.articles.isEmpty
+                self.noNews = (response.articles.isEmpty && page == 1)
+                maxNumerPages = ceil(Double(response.totalResults) / Double(NewsApiConfig.pageSize))
                 if case .loaded(let articles) = self.state {
                     var news = articles
                     news.append(contentsOf: response.articles)
@@ -92,7 +95,10 @@ final class HomeViewModel: ObservableObject {
     func loadMoreArticlesIfNeeded(article: Article) {
         if isLastCell(article: article) {
             page += 1
-            getArticles()
+            noMoreNews = Double(page) >= maxNumerPages + 1
+            if Double(page) <= maxNumerPages {
+                getArticles()
+            }
         }
     }
     

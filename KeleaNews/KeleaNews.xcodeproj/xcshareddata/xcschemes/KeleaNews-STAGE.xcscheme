@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1520"
-   version = "2.2">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -20,50 +20,17 @@
                ReferencedContainer = "container:KeleaNews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <AutocreatedTestPlanReference>
-            </AutocreatedTestPlanReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug_PROD"
+      buildConfiguration = "Debug_STAGE"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5154F2B62B6841AD00C90BB1"
-               BuildableName = "KeleaNewsTests.xctest"
-               BlueprintName = "KeleaNewsTests"
-               ReferencedContainer = "container:KeleaNews.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5154F2C02B6841AD00C90BB1"
-               BuildableName = "KeleaNewsUITests.xctest"
-               BlueprintName = "KeleaNewsUITests"
-               ReferencedContainer = "container:KeleaNews.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug_PROD"
+      buildConfiguration = "Debug_STAGE"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -84,7 +51,7 @@
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release_PROD"
+      buildConfiguration = "Release_STAGE"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -101,10 +68,10 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug_PROD">
+      buildConfiguration = "Debug_STAGE">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release_PROD"
+      buildConfiguration = "Release_STAGE"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

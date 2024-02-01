@@ -73,7 +73,7 @@ final class HomeViewModelTests: XCTestCase {
     }
 
     func test_given_get_news_when_unexpected_status_code_then_status_error() throws {
-        let expectedState: HomeState = .error("Unexpected error")
+        let expectedState: HomeState = .error(String(localized: "unexpectedError"))
         let expectation = XCTestExpectation(description: "State is set")
         
         sut.$state.dropFirst().sink { state in
@@ -89,7 +89,7 @@ final class HomeViewModelTests: XCTestCase {
     }
     
     func test_given_get_news_when_401_status_code_then_status_error() throws {
-        let expectedState: HomeState = .error("Token error")
+        let expectedState: HomeState = .error(String(localized: "tokenError"))
         let expectation = XCTestExpectation(description: "State is set")
         
         sut.$state.dropFirst().sink { state in
@@ -105,7 +105,7 @@ final class HomeViewModelTests: XCTestCase {
     }
     
     func test_given_get_news_when_unexpected_error_then_status_error() throws {
-        let expectedState: HomeState = .error("Unexpected error")
+        let expectedState: HomeState = .error(String(localized: "unexpectedError"))
         let expectation = XCTestExpectation(description: "State is set")
         
         sut.$state.dropFirst().sink { state in
@@ -126,7 +126,7 @@ final class HomeViewModelTests: XCTestCase {
         
         sut.$state.dropFirst().sink { state in
             XCTAssertEqual(state, expectedState)
-            XCTAssertTrue(self.sut.noResults)
+            XCTAssertTrue(self.sut.noNews)
             expectation.fulfill()
         }
         .store(in: &subscriptions)

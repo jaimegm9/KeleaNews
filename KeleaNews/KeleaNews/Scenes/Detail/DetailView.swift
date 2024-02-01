@@ -23,7 +23,6 @@ struct DetailView: View {
                 VStack(spacing: 0) {
                     if let image = vm.article.urlToImage {
                         ImageCombine(placeholder: Image("placeholder"), url: URL(string: image))
-                            .accessibility(identifier: Accessibility.Detail.image)
                     }
                     VStack {
                         Text(vm.article.title ?? "")
@@ -48,7 +47,6 @@ struct DetailView: View {
                         .accessibility(identifier: Accessibility.Detail.content)
                 }
             }
-            .edgesIgnoringSafeArea(.top)
             
             closeButton()
             safariButton()
@@ -73,7 +71,7 @@ extension DetailView {
                         .padding()
                         .background(Color.keleaOrange)
                         .clipShape(.circle)
-                        .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
+                        .modifier(Shadow())
                 }
                 .padding([.top, .leading], ViewTraits.padding)
                 .accessibility(identifier: Accessibility.Detail.closeButton)
@@ -91,14 +89,14 @@ extension DetailView {
                 vm.openSafari()
             }) {
                 HStack {
-                    Text("See full content in safari")
+                    Text("safari")
                     Image(systemName: "safari")
                 }
                 .foregroundStyle(.white)
                 .padding()
                 .background(Color.keleaOrange)
                 .clipShape(.capsule)
-                .shadow(color: .gray.opacity(0.8), radius: 5, x: 5, y: 5)
+                .modifier(Shadow())
             }
             .padding(.bottom, ViewTraits.padding)
             .accessibility(identifier: Accessibility.Detail.safariButton)

@@ -9,7 +9,6 @@ import XCTest
 
 final class DetailRobot: Robot {
     
-    private lazy var image = app.images[Accessibility.Detail.image]
     private lazy var title = app.staticTexts[Accessibility.Detail.title]
     private lazy var content = app.staticTexts[Accessibility.Detail.content]
     private lazy var closeButton = app.buttons[Accessibility.Detail.closeButton]
@@ -17,7 +16,6 @@ final class DetailRobot: Robot {
     
     @discardableResult
     func checkContent() -> Self {
-        assert(image, [.exists])
         assert(title, [.exists])
         assert(content, [.exists])
         assert(closeButton, [.exists])

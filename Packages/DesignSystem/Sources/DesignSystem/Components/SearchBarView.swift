@@ -34,17 +34,6 @@ public struct SearchBarView: View {
                 .onSubmit {
                     search()
                 }
-            if !searchText.isEmpty {
-                Button {
-                    $searchText.wrappedValue = ""
-                } label: {
-                    Image(systemName: "xmark")
-                        .symbolVariant(.circle)
-                        .symbolVariant(.fill)
-                }
-                .buttonStyle(.plain)
-                .opacity(0.3)
-            }
         }
         .padding(ViewTraits.padding)
         .overlay(RoundedRectangle(cornerRadius: ViewTraits.cornerRadius)

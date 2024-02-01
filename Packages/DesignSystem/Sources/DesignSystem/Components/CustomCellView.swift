@@ -58,7 +58,7 @@ public struct CustomCellView: View {
         .cornerRadius(ViewTraits.cornerRadius)
         .padding([.leading, .trailing], ViewTraits.margin)
         .padding(.bottom, ViewTraits.marginBottom)
-        .shadow(color: .black.opacity(0.8), radius: 5, x: 5, y: 5)
+        .modifier(Shadow())
         
     }
 }

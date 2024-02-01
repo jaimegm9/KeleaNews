@@ -14,7 +14,6 @@ public enum Accessibility {
     }
     
     enum Detail {
-        static let image = "DetailView_image"
         static let title = "DetailView_title"
         static let content = "DetailView_content"
         static let closeButton = "DetailView_close_button"

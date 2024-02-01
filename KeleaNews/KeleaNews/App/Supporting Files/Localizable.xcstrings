@@ -1,34 +1,89 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "Home title" : {
-      "extractionState" : "manual",
+    "News" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "News"
+          }
+        }
+      }
+    },
+    "NoNews" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kelea"
+            "value" : "There are no news."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kelea"
+            "value" : "No hay noticias."
           }
         }
       }
     },
-    "News" : {
-
+    "ok" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ok"
+          }
+        }
+      }
     },
-    "No results" : {
-
+    "safari" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See full content in Safari"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver el contenido en Safari"
+          }
+        }
+      }
     },
-    "Ok" : {
-
+    "tokenError" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Token error"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error en el token"
+          }
+        }
+      }
     },
-    "See full content in safari" : {
-
+    "unexpectedError" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Something went wrong"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
