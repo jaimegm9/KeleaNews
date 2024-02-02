@@ -39,7 +39,7 @@ enum NewsApiService: NetworkRequest {
         switch self {
         case .getRecentNews(let topic, let page):
             params["q"] = topic
-            params["from"] = "2024-01-29" //Decided to select a fixed date because getting the current one sometimes is not returning any article
+            params["from"] = "2024-01-29" // Decided to select a fixed date because getting the current one sometimes is not returning any article
             params["sortBy"] = "popularity"
             params["page"] = String(page)
         case .getTopHeadlines(let country, let page):

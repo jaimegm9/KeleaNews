@@ -9,6 +9,12 @@ import SwiftUI
 import DesignSystem
 
 struct HomeView: View {
+    
+    private enum ViewTraits {
+        static let padding: CGFloat = 16
+        static let paddingReset: CGFloat = -10
+    }
+    
     @StateObject var vm: HomeViewModel
     @FocusState var isFocused: Bool
     @State private var scrollToTop: Bool = false
@@ -77,11 +83,28 @@ extension HomeView {
     
     @ViewBuilder
     func searchView() -> some View {
-        SearchBarView(searchText: $vm.searchText,
-                      isFocused: _isFocused,
-                      search: { vm.loadingAndGetNews() })
-        .padding([.top, .bottom], 15)
-        .id(searchBarId)
+        VStack {
+            SearchBarView(searchText: $vm.searchText,
+                          isFocused: _isFocused,
+                          search: { vm.loadingAndGetNews() })
+            .padding([.top, .bottom], ViewTraits.padding)
+            .id(searchBarId)
+            
+            HStack {
+                Spacer()
+                if !vm.searchText.isEmpty {
+                    Button(action: {
+                        vm.searchText = ""
+                        vm.loadingAndGetNews()
+                    }) {
+                        Text("Reset")
+                            .foregroundStyle(Color.keleaDarkBlue)
+                    }
+                    .padding(.top, ViewTraits.paddingReset)
+                    .padding([.bottom, .trailing], ViewTraits.padding)
+                }
+            }
+        }
     }
     
     @ViewBuilder
